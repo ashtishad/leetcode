@@ -1,3 +1,3 @@
-module github.com/ashtishad/missing-semester
+module github.com/ashtishad/leetcode
 
 go 1.22.0
