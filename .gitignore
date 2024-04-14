@@ -31,6 +31,10 @@ go.work
 .idea/**/dictionaries
 .idea/**/shelf
 .idea/**/.gitignore
+.idea/leetcode.iml
+.idea/modules.xml
+.idea/vcs.xml
+
 
 # AWS User-specific
 .idea/**/aws.xml
@@ -62,3 +66,4 @@ go.work
 
 # Built Visual Studio Code Extensions
 *.vsix
+
