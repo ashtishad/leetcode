@@ -1,11 +1,27 @@
 package dsa
 
-// binarySearch searches for target in a sorted slice and returns the position
-// where target is found, or the position where target would appear in the
-// sort order; it also returns a bool saying whether the target is really found
-// in the slice. The slice must be sorted in increasing order.
-// Input: nums = [-1,0,3,5,9,12], target = 13, out: 4
-func binarySearch(nums []int, target int) (int, bool) {
+// Approach 1: Find the Exact Value
+func binarySearch(x []int, target int) int {
+	l, r := 0, len(x)-1
+
+	for l <= r {
+		m := l + ((r - l) >> 1) // floor value
+
+		switch {
+		case x[m] == target:
+			return m
+		case x[m] < target:
+			l = m + 1
+		case x[m] > target:
+			r = m - 1
+		}
+	}
+
+	return -1
+}
+
+// Approach 2: Find Insert Position, check slices.BinarySearch()
+func binarySearchX(nums []int, target int) (int, bool) {
 	n := len(nums)
 
 	l, r := 0, n

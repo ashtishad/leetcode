@@ -21,7 +21,7 @@ func TestBinarySearch(t *testing.T) {
 
 	for _, tc := range tests {
 		t.Run(tc.name, func(t *testing.T) {
-			gotPos, gotFound := binarySearch(tc.nums, tc.target)
+			gotPos, gotFound := binarySearchX(tc.nums, tc.target)
 
 			if gotPos != tc.wantPos || gotFound != tc.wantFound {
 				t.Errorf("binarySearch(%v, %d) = (%d, %v), want (%d, %v)", tc.nums, tc.target, gotPos, gotFound, tc.wantPos, tc.wantFound)
