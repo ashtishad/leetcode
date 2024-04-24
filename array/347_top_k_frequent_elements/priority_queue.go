@@ -1,8 +1,7 @@
-package main
+package array
 
 import (
 	"container/heap"
-	"fmt"
 )
 
 // Time: O(N + M log M)
@@ -70,8 +69,4 @@ func (pq *PriorityQueue) Pop() interface{} {
 	old[n-1] = nil
 	*pq = old[0 : n-1]
 	return item
-}
-
-func main() {
-	fmt.Println(topKFrequentPQ([]int{1, 1, 1, 2, 2, 3}, 2))
 }

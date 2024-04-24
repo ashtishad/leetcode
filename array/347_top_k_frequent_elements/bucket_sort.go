@@ -1,4 +1,4 @@
-package main
+package array
 
 // Bucket Sort
 // Time: O(n) and Space: O(n)
