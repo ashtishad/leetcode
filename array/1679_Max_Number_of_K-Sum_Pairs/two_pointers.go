@@ -3,7 +3,7 @@ package array
 import "slices"
 
 // Time: o(nlogn) and Space: O(1)
-func maxOperations(nums []int, k int) int {
+func maxOperationsSort(nums []int, k int) int {
 	slices.Sort(nums)
 
 	var ops int
