@@ -1,23 +1,24 @@
 package array
 
+// Greedy
+// Time: O(n) and Space: O(1)
 func canCompleteCircuit(gas []int, cost []int) int {
-	n := len(gas)
+	var totalTank, currTank, start int
 
-	fuelLeft, globalFuelLeft, start := 0, 0, 0
+	for i := range gas {
+		totalTank += gas[i] - cost[i]
+		currTank += gas[i] - cost[i]
 
-	for i := 0; i < n; i++ {
-		globalFuelLeft += gas[i] - cost[i]
-		fuelLeft += gas[i] - cost[i]
-
-		if fuelLeft < 0 {
+		if currTank < 0 {
+			// means we cannot start from this station, so start from next
 			start = i + 1
-			fuelLeft = 0
+			currTank = 0
 		}
 	}
 
-	if globalFuelLeft < 0 {
-		return -1
+	if totalTank >= 0 {
+		return start
 	}
 
-	return start
+	return -1
 }
